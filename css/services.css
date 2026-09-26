@@ -86,11 +86,13 @@
 
 /* ---------- 2. Base ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }   /* stop phones inflating text when the page is opened directly */
 body { font-family: var(--ff-body); font-size: 16px; line-height: 1.7; color: var(--text); background: var(--bg); overflow-x: hidden; transition: background-color .4s ease, color .4s ease; }
 body.nav-open { overflow: hidden; }
-main { overflow-x: hidden; overflow-x: clip; }   /* nothing inside the page can push it wider than the screen (hidden = fallback for older iOS Safari) */
+main, .footer { overflow-x: hidden; overflow-x: clip; }   /* nothing inside the page can push it wider than the screen (hidden = fallback for older iOS Safari) */
 html, body { max-width: 100%; }
+/* grid children may shrink below their content width, so nothing can force a column wider than a small phone */
+:is(.srow, .faq__inner, .addons__grid, .plans__grid) > * { min-width: 0; }
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 ul, ol { list-style: none; }
@@ -209,6 +211,7 @@ h1, h2, h3, h4 { font-family: var(--ff-head); color: var(--heading); line-height
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes floaty { 50% { transform: translateY(-10px); } }
 @keyframes lineUp { to { transform: none; } }
+@keyframes lineFade { from { opacity: 0; } }
 @keyframes heroIn { from { opacity: 0; transform: translateY(24px); } }
 
 .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px; padding: 6px 14px; border-radius: 50px; background: var(--icon-bg); color: var(--link); font-family: var(--ff-head); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; line-height: 1.4; transition: transform .3s var(--ease); }
@@ -256,7 +259,7 @@ h1, h2, h3, h4 { font-family: var(--ff-head); color: var(--heading); line-height
 .srow:nth-child(even) .srow__price { inset-inline-end: auto; inset-inline-start: 22px; }
 .srow__price small { font-size: 12px; opacity: .85; }
 .srow__price strong { font-family: var(--ff-head); font-size: 30px; font-weight: 800; margin-block: 2px; unicode-bidi: plaintext; }
-.srow__copy .btn { display: flex; width: fit-content; margin-inline: auto; }   /* button centred in its column */
+.srow__copy .btn { display: flex; width: fit-content; margin-inline: 0; }   /* desktop: lines up with the left-aligned copy (centred below 1024px) */
 .srow__copy { position: relative; }
 .srow__num { position: absolute; top: -34px; inset-inline-end: 0; font-family: var(--ff-head); font-size: 96px; font-weight: 800; line-height: 1; color: var(--c-sky); opacity: .18; pointer-events: none; }
 .srow__icon { width: 60px; height: 60px; margin-bottom: 18px; border-radius: 18px; display: grid; place-items: center; background: var(--icon-bg); color: var(--link); transition: background-color .4s, color .4s, border-radius .5s, transform .6s var(--ease); }
@@ -576,6 +579,7 @@ h1, h2, h3, h4 { font-family: var(--ff-head); color: var(--heading); line-height
   .srow__icon { margin-inline: auto; }
   .srow__num { display: none; }   /* big faint number would sit behind the centred icon on narrow screens */
   .srow__points { width: fit-content; margin-inline: auto; text-align: start; }
+  .srow__copy .btn { margin-inline: auto; }
 
   /* add-ons: two per row */
   .addons__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
@@ -584,6 +588,12 @@ h1, h2, h3, h4 { font-family: var(--ff-head); color: var(--heading); line-height
   .plans__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .plan--featured { grid-column: 1 / -1; order: -1; }
   .plan__desc { min-height: 0; }
+  /* plan cards: centred header like the other cards, list stays readable */
+  .plan { text-align: center; }
+  .plan__icon { margin-inline: auto; }
+  .plan__price { justify-content: center; }
+  .plan__list { width: fit-content; margin-inline: auto; text-align: start; }
+  [dir="rtl"] .plan :is(h3, .plan__desc) { text-align: center; }
 
   /* faq: stacked, intro centred */
   .faq__inner { grid-template-columns: 1fr; gap: 40px; }
@@ -658,6 +668,16 @@ h1, h2, h3, h4 { font-family: var(--ff-head); color: var(--heading); line-height
   .logo { gap: 8px; }
   .logo__img { width: 38px; height: 38px; }
   .logo__name { font-size: clamp(17px, 4.8vw, 19px); }
+  /* header must fit a 320px phone (iPhone SE): it was 8px too wide, so phones zoomed the whole page out */
+  .logo { flex-shrink: 1; min-width: 0; gap: 7px; }
+  .logo__text { min-width: 0; }
+  .logo__img { width: clamp(32px, 10vw, 38px); height: clamp(32px, 10vw, 38px); }
+  .logo__tag { font-size: clamp(7.5px, 2.35vw, 8.5px); letter-spacing: .03em; }
+  .header__actions { gap: 4px; flex-shrink: 0; }
+  .icon-btn { height: 36px; min-width: 36px; }
+  .dir-toggle { padding-inline: 8px; }
+  .footer .logo__img { width: 46px; height: 46px; }
+  .footer .logo__tag { font-size: 11px; letter-spacing: .1em; }
 
   /* type scale for small phones */
   .section__head { margin-bottom: 40px; }
@@ -704,6 +724,12 @@ h1, h2, h3, h4 { font-family: var(--ff-head); color: var(--heading); line-height
   .plan { padding: 30px 22px 26px; }
   .plan__desc { min-height: 0; }
   .plan__price strong { font-size: 36px; }
+  /* plan cards: centred header like the other cards, list stays readable */
+  .plan { text-align: center; }
+  .plan__icon { margin-inline: auto; }
+  .plan__price { justify-content: center; }
+  .plan__list { width: fit-content; margin-inline: auto; text-align: start; }
+  [dir="rtl"] .plan :is(h3, .plan__desc) { text-align: center; }
 
   /* faq */
   .faq__inner { grid-template-columns: 1fr; gap: 32px; }
@@ -719,6 +745,12 @@ h1, h2, h3, h4 { font-family: var(--ff-head); color: var(--heading); line-height
   .cta h2 { font-size: clamp(22px, 6.2vw, 26px); }
   .cta__actions { width: 100%; flex-direction: column; }
   .cta__actions .btn { width: 100%; }
+
+  /* phones opened directly: banner title lines fade in without a clipping mask,
+     so a line that wraps before the web font loads is never cut off */
+  .page-hero__title .line { overflow: visible; padding-bottom: 0; }
+  .page-hero__title .line > span { display: inline; transform: none; animation: lineFade .9s var(--ease) both; }
+  .page-hero__title .line:nth-child(2) > span { animation-delay: .12s; }
 
   /* phones: slide-in blocks rise from below instead of from the side, so nothing starts off-screen */
   .js .reveal--side, .js .reveal--side-rev { transform: translateY(36px); }

@@ -86,7 +86,7 @@
 
 /* ---------- 2. Base ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }   /* stop phones inflating text when the page is opened directly */
 body { font-family: var(--ff-body); font-size: 16px; line-height: 1.7; color: var(--text); background: var(--bg); overflow-x: hidden; transition: background-color .4s ease, color .4s ease; }
 body.nav-open { overflow: hidden; }
 main { overflow-x: hidden; overflow-x: clip; }   /* nothing inside the page can push it wider than the screen (hidden = fallback for older iOS Safari) */
@@ -720,6 +720,15 @@ h1, h2, h3, h4 { font-family: var(--ff-head); color: var(--heading); line-height
   .logo { gap: 8px; }
   .logo__img { width: 38px; height: 38px; }
   .logo__name { font-size: clamp(17px, 4.8vw, 19px); }
+  /* header can never be wider than the phone: the logo text shrinks (and the tagline trims) before the
+     buttons get pushed off-screen. Without this, a wider fallback font on first load pushed the header
+     8px past the screen and the phone zoomed the whole page out. */
+  .header__inner { min-width: 0; overflow: hidden; overflow: clip; }
+  .header__actions { flex-shrink: 0; }
+  .logo { flex-shrink: 1; min-width: 0; }
+  .logo__img { flex-shrink: 0; }
+  .logo__text { min-width: 0; overflow: hidden; }
+  .logo__name, .logo__tag { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
   .hero { padding: 50px 0 140px; }
   .footer__grid { grid-template-columns: 1fr 1fr; gap: 34px 16px; }

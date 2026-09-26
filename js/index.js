@@ -28,7 +28,9 @@
     }
     function resize() {
       var dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = hero.offsetWidth; h = hero.offsetHeight;
+      var nw = hero.offsetWidth, nh = hero.offsetHeight;
+      if (!nw || !nh || (nw === w && nh === h)) return;   // nothing changed (e.g. mobile URL bar) — keep the flakes
+      w = nw; h = nh;
       canvas.width = w * dpr; canvas.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       flakes = []; for (var i = 0, n = Math.round(Math.min(130, w / 11)); i < n; i++) flakes.push(flake(true));
       if (!running) draw(0);
@@ -50,7 +52,16 @@
     function start() { if (running || reduceMotion) return; running = true; raf = requestAnimationFrame(loop); }
     function stop() { running = false; cancelAnimationFrame(raf); }
     readColor(); resize();
-    window.addEventListener('resize', debounce(resize, 200));
+    /* The hero's height changes after first paint when a phone opens the page directly
+       (web fonts + hero image load late), so the canvas must follow the hero itself —
+       not only window resizes — or the snow gets stretched / stops short. */
+    if ('ResizeObserver' in window) new ResizeObserver(debounce(resize, 120)).observe(hero);
+    else window.addEventListener('resize', debounce(resize, 200));
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(resize);
+    window.addEventListener('load', resize);
+    // re-measure when the hero changes height without a window resize (web fonts finishing, phone opened directly)
+    if ('ResizeObserver' in window) new ResizeObserver(debounce(resize, 150)).observe(hero);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(resize);
     hero.addEventListener('mousemove', function (e) { target = (e.clientX / window.innerWidth - 0.5) * 1.6; });
     if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { en[0].isIntersecting ? start() : stop(); }).observe(hero);
     else start();
