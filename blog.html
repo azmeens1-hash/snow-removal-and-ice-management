@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | FrostGuard Snow &amp; Ice Management</title>
+  <meta name="description" content="The FrostGuard Winter Desk blog: snow and ice safety tips, property guides, commercial advice and company news from our crews and weather desk.">
+  <link rel="icon" type="image/svg+xml" href="images/logo-ltr.svg">
+
+  <!-- Apply saved theme + direction before first paint (prevents flash) -->
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('fg-theme');
+        var d = localStorage.getItem('fg-dir');
+        if (t) document.documentElement.setAttribute('data-theme', t);
+        if (d) document.documentElement.setAttribute('dir', d);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+
+  <!--
+    IMAGE SLOTS — drop real photos into /images with these names.
+      blog-hero.jpg  (page banner)
+      blog-featured.jpg · blog-1.jpg … blog-6.jpg  (article images)
+    Until a photo is added, a blue snow gradient with an icon is shown.
+  -->
+
+  <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M4.2 6.5l15.6 9M4.2 15.5l15.6-9M9.5 3.8 12 6l2.5-2.2M9.5 20.2 12 18l2.5 2.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 16V7h10v9M13 10h4l3 3v3h-7M2 19l5-3M6.5 19a1.8 1.8 0 1 0 0-.01M16.5 19a1.8 1.8 0 1 0 0-.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5l8-3v19M12 8h8v13M2 21h20M7 8h2M7 12h2M7 16h2M15 12h2M15 16h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-walk" viewBox="0 0 24 24"><path d="M13 4.5a1.5 1.5 0 1 0 0-.01M10 21l2-6 3 3v3M8 12l3-4 4 2 2 3M12 15l-1-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11ZM9.5 14.5a2.5 2.5 0 0 0 2.5 2.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Zm-3 9 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 21a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m3.5 6 8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7l-4-4Zm0 0v4h4M9 12h6M9 16h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z" fill="currentColor"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8Z" fill="currentColor"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><path d="M4 9h4v12H4zM6 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM10 9h4v2c.6-1.2 2-2.2 4-2.2 3.2 0 4 2 4 5V21h-4v-6c0-1.5-.3-2.8-2-2.8s-2 1.3-2 2.8v6h-4V9Z" fill="currentColor"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-yt" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5M5.5 9.5V20h13V9.5M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9-9.3C1.9 7.2 4.2 4 7.6 4c2 0 3.4 1.1 4.4 2.6C13 5.1 14.4 4 16.4 4c3.4 0 5.7 3.2 4.6 6.7C19.5 15.4 12 20 12 20Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15M5 19l7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m8.5 14-1.5 7 5-2.5 5 2.5-1.5-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14a6 6 0 0 1 3.5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-roof" viewBox="0 0 24 24"><path d="M2 12 12 4l10 8M5 10v10h14V10M9 20v-5h6v5M16 6V3h3v5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 8.5 12 4l9 4.5v7L12 20l-9-4.5v-7ZM3 8.5l9 4.5 9-4.5M12 13v7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8L3 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7.5" cy="8.5" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v5H5a1 1 0 0 1-1-1v-4Zm16 0h-3v5h2a1 1 0 0 0 1-1v-4ZM17 19c0 1.5-2 2-5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="FrostGuard Snow and Ice — home">
+        <img src="images/logo-ltr.svg" alt="" class="logo__img logo__img--ltr" width="46" height="46">
+        <img src="images/logo-rtl.svg" alt="" class="logo__img logo__img--rtl" width="46" height="46">
+        <span class="logo__text">
+          <span class="logo__name">Frost<b>Guard</b></span>
+          <span class="logo__tag">Snow &amp; Ice Management</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Primary">
+        <div class="nav__head">
+          <span class="nav__title">Menu</span>
+          <button class="icon-btn nav__close" id="navClose" aria-label="Close menu"><svg><use href="#i-close"/></svg></button>
+        </div>
+        <ul class="nav__list">
+          <li class="nav__item has-dropdown">
+            <button class="nav__link nav__link--toggle" aria-expanded="false" aria-controls="homeMenu">
+              Home <svg class="chev"><use href="#i-chev"/></svg>
+            </button>
+            <ul class="dropdown" id="homeMenu">
+              <li><a href="index.html"><svg><use href="#i-home"/></svg>Home 1 <small>Classic seasonal</small></a></li>
+              <li><a href="home2.html"><svg><use href="#i-building"/></svg>Home 2 <small>Commercial focus</small></a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="services.html" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="pricing.html" class="nav__link">Pricing</a></li>
+          <li class="nav__item"><a href="blog.html" class="nav__link is-active" aria-current="page">Blog</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+          <li class="nav__item"><a href="dashboard.html" class="nav__link">Dashboard</a></li>
+        </ul>
+        <div class="nav__foot">
+          <a href="login.html" class="btn btn--primary btn--block"><svg><use href="#i-user"/></svg>Login</a>
+          <a href="tel:+18005550199" class="nav__hotline"><svg><use href="#i-phone"/></svg>24/7 Dispatch: 1-800-555-0199</a>
+        </div>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn dir-toggle" id="dirToggle" aria-label="Switch to right-to-left layout">
+          <span class="dir-toggle__label">RTL</span>
+        </button>
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Switch to dark theme">
+          <svg class="theme-toggle__moon"><use href="#i-moon"/></svg>
+          <svg class="theme-toggle__sun"><use href="#i-sun"/></svg>
+        </button>
+        <a href="login.html" class="btn btn--primary btn--sm header__login"><svg><use href="#i-user"/></svg><span>Login</span></a>
+        <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-controls="nav" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <main id="main">
+
+    <!-- ================= PAGE BANNER (no snowfall) ================= -->
+    <section class="page-hero">
+      <div class="page-hero__bg" aria-hidden="true"><span class="page-hero__img"></span></div>
+      <div class="container page-hero__inner">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html"><svg><use href="#i-home"/></svg>Home</a>
+          <svg class="crumbs__sep flip"><use href="#i-chev-r"/></svg>
+          <span aria-current="page">Blog</span>
+        </nav>
+        <h1 class="page-hero__title"><span class="line"><span>The Winter Desk</span></span><span class="line"><span><em>Tips, guides &amp; storm news.</em></span></span></h1>
+        <p class="page-hero__lead">Practical advice from our crews and weather desk on keeping your home or business safe, clear and ready for every storm.</p>
+      </div>
+      <svg class="page-hero__wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C 240 80 480 0 720 30 S 1200 70 1440 20 V80 H0 Z"/></svg>
+    </section>
+
+    <!-- ================= 1. FEATURED POST ================= -->
+    <section class="section featured" id="featured">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow"><svg><use href="#i-star"/></svg>Featured article</span>
+          <h2 class="section__title">This week's <span class="hl">must-read</span></h2>
+        </header>
+
+        <article class="feature reveal">
+          <a href="#" class="feature__media" aria-label="Read: How to get your property winter-ready before the first storm">
+            <div class="media feature__img"><span class="media__img" style="background-image:url('images/blog-featured.jpg')"></span><svg><use href="#i-snow"/></svg><span class="shine" aria-hidden="true"></span></div>
+            <span class="feature__cat">Guides</span>
+          </a>
+          <div class="feature__body">
+            <ul class="meta">
+              <li><svg><use href="#i-cal"/></svg>Oct 14, 2026</li>
+              <li><svg><use href="#i-clock"/></svg>7 min read</li>
+            </ul>
+            <h3><a href="#">How to get your property winter-ready before the first storm</a></h3>
+            <p>A simple ten-step checklist from our crews, covering edge stakes, gutters, salt storage and more. Get these done in October and the first big snowfall won't catch you out.</p>
+            <ul class="feature__points">
+              <li><svg><use href="#i-check"/></svg>Stake lawn and garden edges</li>
+              <li><svg><use href="#i-check"/></svg>Clear gutters and downspouts</li>
+              <li><svg><use href="#i-check"/></svg>Book your route before Nov 15</li>
+            </ul>
+            <div class="feature__foot">
+              <span class="author"><span class="avatar">EV</span><span><strong>Elena Varga</strong><small>Dispatch &amp; Weather Desk</small></span></span>
+              <a href="blogdetails1.html" class="btn btn--primary">Read Article <svg class="flip"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= 2. LATEST POSTS (filterable) ================= -->
+    <section class="section posts" id="posts">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow"><svg><use href="#i-grid"/></svg>Latest articles</span>
+          <h2 class="section__title">Fresh from <span class="hl">the winter desk</span></h2>
+          <p class="section__lead">Filter by topic to find exactly what you need.</p>
+        </header>
+
+        <div class="filters reveal" role="group" aria-label="Filter articles by topic">
+          <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter" data-filter="guides" aria-pressed="false">Guides</button>
+          <button type="button" class="filter" data-filter="safety" aria-pressed="false">Safety</button>
+          <button type="button" class="filter" data-filter="commercial" aria-pressed="false">Commercial</button>
+          <button type="button" class="filter" data-filter="news" aria-pressed="false">Company news</button>
+        </div>
+
+        <div class="posts__grid" id="postsGrid">
+          <article class="post reveal" data-cat="safety">
+            <a href="#" class="post__media" aria-label="Read: Black ice: why the most dangerous ice is the one you can't see">
+              <div class="media post__img"><span class="media__img" style="background-image:url('images/blog-1.jpg')"></span><svg><use href="#i-drop"/></svg><span class="shine" aria-hidden="true"></span></div>
+              <span class="post__cat">Safety</span>
+            </a>
+            <div class="post__body">
+              <ul class="meta"><li><svg><use href="#i-cal"/></svg>Oct 9, 2026</li><li><svg><use href="#i-clock"/></svg>4 min</li></ul>
+              <h3><a href="#">Black ice: why the most dangerous ice is the one you can't see</a></h3>
+              <p>How black ice forms, where it hides and how brine stops it before it starts.</p>
+              <a href="#" class="link-arrow">Read More <svg class="flip"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+
+          <article class="post reveal" style="--d:.08s" data-cat="guides">
+            <a href="#" class="post__media" aria-label="Read: Rock salt or pet-safe blend? Choosing the right de-icer">
+              <div class="media post__img"><span class="media__img" style="background-image:url('images/blog-2.jpg')"></span><svg><use href="#i-leaf"/></svg><span class="shine" aria-hidden="true"></span></div>
+              <span class="post__cat">Guides</span>
+            </a>
+            <div class="post__body">
+              <ul class="meta"><li><svg><use href="#i-cal"/></svg>Oct 2, 2026</li><li><svg><use href="#i-clock"/></svg>5 min</li></ul>
+              <h3><a href="#">Rock salt or pet-safe blend? Choosing the right de-icer</a></h3>
+              <p>What each option costs, how well it works, and what it does to paws and concrete.</p>
+              <a href="#" class="link-arrow">Read More <svg class="flip"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+
+          <article class="post reveal" style="--d:.16s" data-cat="commercial">
+            <a href="#" class="post__media" aria-label="Read: Slip-and-fall claims: how salt logs protect your business">
+              <div class="media post__img"><span class="media__img" style="background-image:url('images/blog-3.jpg')"></span><svg><use href="#i-shield"/></svg><span class="shine" aria-hidden="true"></span></div>
+              <span class="post__cat">Commercial</span>
+            </a>
+            <div class="post__body">
+              <ul class="meta"><li><svg><use href="#i-cal"/></svg>Sep 25, 2026</li><li><svg><use href="#i-clock"/></svg>6 min</li></ul>
+              <h3><a href="#">Slip-and-fall claims: how salt logs protect your business</a></h3>
+              <p>Why time-stamped treatment records are a property manager's best friend.</p>
+              <a href="#" class="link-arrow">Read More <svg class="flip"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+
+          <article class="post reveal" data-cat="news">
+            <a href="#" class="post__media" aria-label="Read: 12 new brine units join the FrostGuard fleet">
+              <div class="media post__img"><span class="media__img" style="background-image:url('images/blog-4.jpg')"></span><svg><use href="#i-truck"/></svg><span class="shine" aria-hidden="true"></span></div>
+              <span class="post__cat">Company news</span>
+            </a>
+            <div class="post__body">
+              <ul class="meta"><li><svg><use href="#i-cal"/></svg>Sep 18, 2026</li><li><svg><use href="#i-clock"/></svg>3 min</li></ul>
+              <h3><a href="#">12 new brine units join the FrostGuard fleet</a></h3>
+              <p>More trucks mean faster pre-treatment across Maple Ridge, Northgate and Cedar Falls.</p>
+              <a href="#" class="link-arrow">Read More <svg class="flip"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+
+          <article class="post reveal" style="--d:.08s" data-cat="guides">
+            <a href="#" class="post__media" aria-label="Read: Protecting interlock and pavers from plow damage">
+              <div class="media post__img"><span class="media__img" style="background-image:url('images/blog-5.jpg')"></span><svg><use href="#i-grid"/></svg><span class="shine" aria-hidden="true"></span></div>
+              <span class="post__cat">Guides</span>
+            </a>
+            <div class="post__body">
+              <ul class="meta"><li><svg><use href="#i-cal"/></svg>Sep 11, 2026</li><li><svg><use href="#i-clock"/></svg>4 min</li></ul>
+              <h3><a href="#">Protecting interlock and pavers from plow damage</a></h3>
+              <p>Rubber blades, edge stakes and a few settings that keep your driveway looking new.</p>
+              <a href="#" class="link-arrow">Read More <svg class="flip"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+
+          <article class="post reveal" style="--d:.16s" data-cat="safety">
+            <a href="#" class="post__media" aria-label="Read: Roof snow loads: when to worry and what to do">
+              <div class="media post__img"><span class="media__img" style="background-image:url('images/blog-6.jpg')"></span><svg><use href="#i-roof"/></svg><span class="shine" aria-hidden="true"></span></div>
+              <span class="post__cat">Safety</span>
+            </a>
+            <div class="post__body">
+              <ul class="meta"><li><svg><use href="#i-cal"/></svg>Sep 4, 2026</li><li><svg><use href="#i-clock"/></svg>5 min</li></ul>
+              <h3><a href="#">Roof snow loads: when to worry and what to do</a></h3>
+              <p>The warning signs of too much snow on your roof, and how to clear it safely.</p>
+              <a href="#" class="link-arrow">Read More <svg class="flip"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+        </div>
+
+        <p class="posts__empty" id="postsEmpty" hidden>No articles in this topic yet. Check back soon.</p>
+      </div>
+    </section>
+
+    <!-- ================= 3. NEWSLETTER ================= -->
+    <section class="section newsletter-wrap" id="newsletter">
+      <div class="container">
+        <div class="newsletter reveal">
+          <span class="cta__flake cta__flake--a" aria-hidden="true"><svg><use href="#i-snow"/></svg></span>
+          <span class="cta__flake cta__flake--b" aria-hidden="true"><svg><use href="#i-snow"/></svg></span>
+          <div class="newsletter__copy">
+            <span class="eyebrow eyebrow--light"><svg><use href="#i-mail"/></svg>Storm alerts &amp; tips</span>
+            <h2>Get winter tips in your inbox</h2>
+            <p>One short email a month, plus a heads-up before every major storm. No spam, and you can unsubscribe any time.</p>
+            <ul class="newsletter__perks">
+              <li><svg><use href="#i-check"/></svg>Storm warnings 24 hours ahead</li>
+              <li><svg><use href="#i-check"/></svg>Seasonal checklists</li>
+              <li><svg><use href="#i-check"/></svg>Early-bird plan pricing</li>
+            </ul>
+          </div>
+          <form class="nform" id="newsForm" novalidate>
+            <label class="nform__field"><span>Your name</span><input type="text" name="name" placeholder="Jane Cooper" autocomplete="name" required></label>
+            <label class="nform__field"><span>Email address</span><input type="email" name="email" placeholder="jane@email.com" autocomplete="email" required></label>
+            <button type="submit" class="btn btn--secondary btn--lg btn--block">Subscribe <svg class="flip"><use href="#i-arrow"/></svg></button>
+            <p class="nform__msg" id="newsMsg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER (light) ================= -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__col footer__brand">
+        <a href="index.html" class="logo" aria-label="FrostGuard home">
+          <img src="images/logo-ltr.svg" alt="" class="logo__img logo__img--ltr" width="46" height="46">
+          <img src="images/logo-rtl.svg" alt="" class="logo__img logo__img--rtl" width="46" height="46">
+          <span class="logo__text"><span class="logo__name">Frost<b>Guard</b></span><span class="logo__tag">Snow &amp; Ice Management</span></span>
+        </a>
+        <p>Dependable seasonal snow and ice management for homes and businesses since 2014. We clear it before you wake.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a>
+          <a href="#" aria-label="X"><svg><use href="#i-x"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg><use href="#i-yt"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="about.html#crew">Our Crews</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer__col"><h4>Services</h4><ul><li><a href="services.html#residential">Residential Plowing</a></li><li><a href="services.html#commercial">Commercial Plowing</a></li><li><a href="services.html#sidewalk">Sidewalk Clearing</a></li><li><a href="services.html#ice">Ice Treatment</a></li></ul></div>
+      <div class="footer__col"><h4>Client Portal</h4><ul><li><a href="login.html">Login</a></li><li><a href="dashboard.html">Dashboard</a></li><li><a href="pricing.html">Pricing Plans</a></li><li><a href="dashboard.html#renewal">Renew Contract</a></li></ul></div>
+      <div class="footer__col"><h4>Service Areas</h4><ul><li><a href="contact.html">Maple Ridge</a></li><li><a href="contact.html">Northgate</a></li><li><a href="contact.html">Cedar Falls</a></li><li><a href="contact.html">Lakeshore</a></li></ul></div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul class="footer__contact">
+          <li><svg><use href="#i-phone"/></svg><a href="tel:+18005550199">1-800-555-0199</a></li>
+          <li><svg><use href="#i-mail"/></svg><a href="mailto:hello@frostguard.co">hello@frostguard.co</a></li>
+          <li><svg><use href="#i-pin"/></svg><span>48 Depot Lane, Northgate</span></li>
+          <li><svg><use href="#i-clock"/></svg><span>24/7 · Nov 1 – Apr 15</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>© <span id="year">2026</span> FrostGuard Snow &amp; Ice Management. All rights reserved.</p>
+        <ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li><li><a href="#">Service Agreement</a></li></ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/blog.js"></script>
+</body>
+</html>

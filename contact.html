@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | FrostGuard Snow &amp; Ice Management</title>
+  <meta name="description" content="Contact FrostGuard Snow &amp; Ice Management: 24/7 dispatch, free on-site estimates, our Northgate depot on the map and the areas we serve.">
+  <link rel="icon" type="image/svg+xml" href="images/logo-ltr.svg">
+
+  <!-- Apply saved theme + direction before first paint (prevents flash) -->
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('fg-theme');
+        var d = localStorage.getItem('fg-dir');
+        if (t) document.documentElement.setAttribute('data-theme', t);
+        if (d) document.documentElement.setAttribute('dir', d);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+  <!--
+    MEDIA — the banner uses the same background video as the About page:
+      videos/about-video(.webm/.mp4), videos/about-video-mobile(.webm/.mp4), images/about-video-poster.jpg
+    MAP — change the address in the iframe data-src (section "Find us") to your real location.
+  -->
+
+  <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M4.2 6.5l15.6 9M4.2 15.5l15.6-9M9.5 3.8 12 6l2.5-2.2M9.5 20.2 12 18l2.5 2.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 16V7h10v9M13 10h4l3 3v3h-7M2 19l5-3M6.5 19a1.8 1.8 0 1 0 0-.01M16.5 19a1.8 1.8 0 1 0 0-.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5l8-3v19M12 8h8v13M2 21h20M7 8h2M7 12h2M7 16h2M15 12h2M15 16h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-walk" viewBox="0 0 24 24"><path d="M13 4.5a1.5 1.5 0 1 0 0-.01M10 21l2-6 3 3v3M8 12l3-4 4 2 2 3M12 15l-1-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11ZM9.5 14.5a2.5 2.5 0 0 0 2.5 2.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Zm-3 9 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 21a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m3.5 6 8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7l-4-4Zm0 0v4h4M9 12h6M9 16h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z" fill="currentColor"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8Z" fill="currentColor"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><path d="M4 9h4v12H4zM6 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM10 9h4v2c.6-1.2 2-2.2 4-2.2 3.2 0 4 2 4 5V21h-4v-6c0-1.5-.3-2.8-2-2.8s-2 1.3-2 2.8v6h-4V9Z" fill="currentColor"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-yt" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5M5.5 9.5V20h13V9.5M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9-9.3C1.9 7.2 4.2 4 7.6 4c2 0 3.4 1.1 4.4 2.6C13 5.1 14.4 4 16.4 4c3.4 0 5.7 3.2 4.6 6.7C19.5 15.4 12 20 12 20Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15M5 19l7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m8.5 14-1.5 7 5-2.5 5 2.5-1.5-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14a6 6 0 0 1 3.5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-roof" viewBox="0 0 24 24"><path d="M2 12 12 4l10 8M5 10v10h14V10M9 20v-5h6v5M16 6V3h3v5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 8.5 12 4l9 4.5v7L12 20l-9-4.5v-7ZM3 8.5l9 4.5 9-4.5M12 13v7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8L3 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7.5" cy="8.5" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v5H5a1 1 0 0 1-1-1v-4Zm16 0h-3v5h2a1 1 0 0 0 1-1v-4ZM17 19c0 1.5-2 2-5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="FrostGuard Snow and Ice — home">
+        <img src="images/logo-ltr.svg" alt="" class="logo__img logo__img--ltr" width="46" height="46">
+        <img src="images/logo-rtl.svg" alt="" class="logo__img logo__img--rtl" width="46" height="46">
+        <span class="logo__text">
+          <span class="logo__name">Frost<b>Guard</b></span>
+          <span class="logo__tag">Snow &amp; Ice Management</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Primary">
+        <div class="nav__head">
+          <span class="nav__title">Menu</span>
+          <button class="icon-btn nav__close" id="navClose" aria-label="Close menu"><svg><use href="#i-close"/></svg></button>
+        </div>
+        <ul class="nav__list">
+          <li class="nav__item has-dropdown">
+            <button class="nav__link nav__link--toggle" aria-expanded="false" aria-controls="homeMenu">
+              Home <svg class="chev"><use href="#i-chev"/></svg>
+            </button>
+            <ul class="dropdown" id="homeMenu">
+              <li><a href="index.html"><svg><use href="#i-home"/></svg>Home 1 <small>Classic seasonal</small></a></li>
+              <li><a href="home2.html"><svg><use href="#i-building"/></svg>Home 2 <small>Commercial focus</small></a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="services.html" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="pricing.html" class="nav__link">Pricing</a></li>
+          <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link is-active" aria-current="page">Contact</a></li>
+          <li class="nav__item"><a href="dashboard.html" class="nav__link">Dashboard</a></li>
+        </ul>
+        <div class="nav__foot">
+          <a href="login.html" class="btn btn--primary btn--block"><svg><use href="#i-user"/></svg>Login</a>
+          <a href="tel:+18005550199" class="nav__hotline"><svg><use href="#i-phone"/></svg>24/7 Dispatch: 1-800-555-0199</a>
+        </div>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn dir-toggle" id="dirToggle" aria-label="Switch to right-to-left layout">
+          <span class="dir-toggle__label">RTL</span>
+        </button>
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Switch to dark theme">
+          <svg class="theme-toggle__moon"><use href="#i-moon"/></svg>
+          <svg class="theme-toggle__sun"><use href="#i-sun"/></svg>
+        </button>
+        <a href="login.html" class="btn btn--primary btn--sm header__login"><svg><use href="#i-user"/></svg><span>Login</span></a>
+        <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-controls="nav" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <main id="main">
+
+    <!-- ================= PAGE BANNER (video + snowfall, same as the About page) ================= -->
+    <section class="page-hero">
+      <div class="page-hero__bg" aria-hidden="true">
+        <!-- background video: the browser uses the first file below that exists and that it can play
+             (phones get the small files). Keep the files in the videos/ folder next to contact.html. -->
+        <video class="page-hero__video" id="heroVideo" autoplay muted loop playsinline preload="auto"
+               poster="images/about-video-poster.jpg">
+          <source src="videos/about-video-mobile.webm" type="video/webm" media="(max-width: 767.98px)">
+          <source src="videos/about-video-mobile.mp4" type="video/mp4" media="(max-width: 767.98px)">
+          <source src="videos/about-video.webm" type="video/webm">
+          <source src="videos/about-video.mp4" type="video/mp4">
+          <source src="images/about-video.mp4" type="video/mp4">
+        </video>
+      </div>
+      <canvas class="page-hero__snow" id="snowCanvas" aria-hidden="true"></canvas>
+      <div class="container page-hero__inner">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html"><svg><use href="#i-home"/></svg>Home</a>
+          <svg class="crumbs__sep flip"><use href="#i-chev-r"/></svg>
+          <span aria-current="page">Contact</span>
+        </nav>
+        <h1 class="page-hero__title"><span class="line"><span>Let's talk snow.</span></span><span class="line"><span><em>We answer 24/7.</em></span></span></h1>
+        <p class="page-hero__lead">Questions, quotes or a storm-night emergency: a real person from our winter desk will get back to you within the hour.</p>
+      </div>
+      <svg class="page-hero__wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C 240 80 480 0 720 30 S 1200 70 1440 20 V80 H0 Z"/></svg>
+    </section>
+
+    <!-- ================= 1. CONTACT CHANNELS ================= -->
+    <section class="section channels" id="channels">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow"><svg><use href="#i-headset"/></svg>Get in touch</span>
+          <h2 class="section__title">Pick the way that <span class="hl">suits you</span></h2>
+          <p class="section__lead">Call, email or drop by the depot. However you reach us, you'll talk to someone who knows your route.</p>
+        </header>
+
+        <div class="channels__grid">
+          <article class="channel reveal">
+            <span class="channel__icon"><svg><use href="#i-phone"/></svg></span>
+            <h3>Call dispatch</h3>
+            <p>Storm nights, quotes and service questions.</p>
+            <a href="tel:+18005550199" class="channel__link">1-800-555-0199</a>
+            <span class="channel__tag"><i></i>Live now</span>
+          </article>
+          <article class="channel reveal" style="--d:.08s">
+            <span class="channel__icon"><svg><use href="#i-mail"/></svg></span>
+            <h3>Email us</h3>
+            <p>Send photos, site plans or contract questions.</p>
+            <a href="mailto:hello@frostguard.co" class="channel__link">hello@frostguard.co</a>
+            <span class="channel__tag channel__tag--muted">Reply in 1 hour</span>
+          </article>
+          <article class="channel reveal" style="--d:.16s">
+            <span class="channel__icon"><svg><use href="#i-pin"/></svg></span>
+            <h3>Visit the depot</h3>
+            <p>Meet the crew and see the fleet in person.</p>
+            <a href="#map" class="channel__link">48 Depot Lane, Northgate</a>
+            <span class="channel__tag channel__tag--muted">Mon – Fri, 8 – 5</span>
+          </article>
+          <article class="channel reveal" style="--d:.24s">
+            <span class="channel__icon"><svg><use href="#i-clock"/></svg></span>
+            <h3>Service hours</h3>
+            <p>Crews on call every day of the snow season.</p>
+            <span class="channel__link">24/7 · Nov 1 – Apr 15</span>
+            <span class="channel__tag channel__tag--muted">Off-season: weekdays</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. MESSAGE FORM ================= -->
+    <section class="section message" id="message">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow"><svg><use href="#i-mail"/></svg>Send a message</span>
+          <h2 class="section__title">Request a <span class="hl">free estimate</span></h2>
+          <p class="section__lead">Tell us about your property and we'll send a quote, usually the same day.</p>
+        </header>
+
+        <div class="message__inner">
+          <form class="cform reveal reveal--side" id="contactForm" novalidate>
+            <div class="cform__row">
+              <label class="cform__field"><span>Full name *</span><input type="text" name="name" placeholder="Jane Cooper" autocomplete="name" required></label>
+              <label class="cform__field"><span>Email *</span><input type="email" name="email" placeholder="jane@email.com" autocomplete="email" required></label>
+            </div>
+            <div class="cform__row">
+              <label class="cform__field"><span>Phone</span><input type="tel" name="phone" placeholder="(555) 010-2030" autocomplete="tel"></label>
+              <label class="cform__field"><span>Service *</span>
+                <select name="service" required>
+                  <option value="">Choose a service</option>
+                  <option>Residential plowing</option>
+                  <option>Commercial plowing</option>
+                  <option>Sidewalk clearing</option>
+                  <option>Ice treatment</option>
+                  <option>Not sure yet</option>
+                </select>
+              </label>
+            </div>
+            <fieldset class="cform__field">
+              <legend>Property type</legend>
+              <div class="pills">
+                <label class="pill"><input type="radio" name="type" value="home" checked><span><svg><use href="#i-home"/></svg>Home</span></label>
+                <label class="pill"><input type="radio" name="type" value="business"><span><svg><use href="#i-building"/></svg>Business</span></label>
+                <label class="pill"><input type="radio" name="type" value="hoa"><span><svg><use href="#i-users"/></svg>HOA / Strata</span></label>
+              </div>
+            </fieldset>
+            <label class="cform__field"><span>Message *</span><textarea name="message" rows="5" placeholder="Driveway size, number of entrances, anything we should know..." required></textarea></label>
+            <button type="submit" class="btn btn--primary btn--lg btn--block">Send Message <svg class="flip"><use href="#i-arrow"/></svg></button>
+            <p class="cform__msg" id="contactMsg" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="promise reveal reveal--side-rev">
+            <span class="cta__flake cta__flake--a" aria-hidden="true"><svg><use href="#i-snow"/></svg></span>
+            <span class="eyebrow eyebrow--light"><svg><use href="#i-shield"/></svg>Our promise</span>
+            <h3>What happens next</h3>
+            <ol class="promise__steps">
+              <li><span>1</span><div><strong>We reply within the hour</strong><small>A winter-desk coordinator reviews your message.</small></div></li>
+              <li><span>2</span><div><strong>Free on-site assessment</strong><small>We measure, photo and map your property.</small></div></li>
+              <li><span>3</span><div><strong>Fixed, written quote</strong><small>No hidden fees. Lock in your route before Nov 15.</small></div></li>
+            </ol>
+            <ul class="promise__stats">
+              <li><strong data-count="1" data-suffix=" hr">0</strong><span>Avg. reply</span></li>
+              <li><strong data-count="4.9" data-decimals="1">0</strong><span>Client rating</span></li>
+              <li><strong data-count="1200" data-suffix="+">0</strong><span>Properties</span></li>
+            </ul>
+            <a href="tel:+18005550199" class="promise__hotline"><svg><use href="#i-phone"/></svg><span><small>Storm emergency?</small>1-800-555-0199</span></a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. MAP ================= -->
+    <section class="section map-sec" id="map">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow"><svg><use href="#i-pin"/></svg>Find us</span>
+          <h2 class="section__title">Our depot &amp; <span class="hl">service areas</span></h2>
+          <p class="section__lead">Crews are based in Northgate and cover every neighbourhood within a 25-minute drive.</p>
+        </header>
+
+        <div class="map reveal">
+          <div class="map__view">
+            <!-- Replace the q= value with your real address (or paste Google Maps → Share → Embed a map src). -->
+            <iframe class="map__frame" id="mapFrame" title="Map showing the FrostGuard depot"
+                    src="https://maps.google.com/maps?q=Northgate%2C%20Seattle%2C%20WA&amp;z=13&amp;output=embed"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <div class="map__fallback" aria-hidden="true"><span class="map__pin"><svg><use href="#i-pin"/></svg></span></div>
+          </div>
+          <div class="map__card">
+            <span class="map__card-icon"><svg><use href="#i-building"/></svg></span>
+            <div>
+              <strong>FrostGuard Depot</strong>
+              <span>48 Depot Lane, Northgate</span>
+            </div>
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Northgate%2C%20Seattle%2C%20WA" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Directions <svg class="flip"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+
+        <ul class="areas reveal" aria-label="Service areas">
+          <li><svg><use href="#i-pin"/></svg>Maple Ridge</li>
+          <li><svg><use href="#i-pin"/></svg>Northgate</li>
+          <li><svg><use href="#i-pin"/></svg>Cedar Falls</li>
+          <li><svg><use href="#i-pin"/></svg>Lakeshore</li>
+          <li><svg><use href="#i-pin"/></svg>Pine Hollow</li>
+          <li><svg><use href="#i-pin"/></svg>Riverside</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= 4. FAQ ================= -->
+    <section class="section faq" id="faq">
+      <div class="container faq__inner">
+        <div class="faq__intro reveal reveal--side-rev">
+          <span class="eyebrow"><svg><use href="#i-help"/></svg>Questions</span>
+          <h2 class="section__title">Before you <span class="hl">reach out</span></h2>
+          <p class="section__lead">Quick answers to what people ask us most. Still stuck? We're one call away.</p>
+          <div class="faq__card">
+            <span class="faq__card-icon"><svg><use href="#i-headset"/></svg></span>
+            <div>
+              <strong>Talk to a real person</strong>
+              <a href="tel:+18005550199">1-800-555-0199</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion reveal reveal--side">
+          <div class="acc">
+            <button type="button" class="acc__head" aria-expanded="false" id="acc1" aria-controls="accp1">How fast will you reply?<span class="acc__icon" aria-hidden="true"></span></button>
+            <div class="acc__panel" id="accp1" role="region" aria-labelledby="acc1"><div><p>Phone calls are answered live, day and night, in snow season. Emails and form messages get a reply within the hour, and usually much sooner.</p></div></div>
+          </div>
+          <div class="acc">
+            <button type="button" class="acc__head" aria-expanded="false" id="acc2" aria-controls="accp2">Is the on-site estimate really free?<span class="acc__icon" aria-hidden="true"></span></button>
+            <div class="acc__panel" id="accp2" role="region" aria-labelledby="acc2"><div><p>Yes. A coordinator visits, measures your property and gives you a fixed written quote with no obligation to sign.</p></div></div>
+          </div>
+          <div class="acc">
+            <button type="button" class="acc__head" aria-expanded="false" id="acc3" aria-controls="accp3">Do you cover my neighbourhood?<span class="acc__icon" aria-hidden="true"></span></button>
+            <div class="acc__panel" id="accp3" role="region" aria-labelledby="acc3"><div><p>We cover everything within a 25-minute drive of our Northgate depot, including the areas listed above the map. If you're just outside, call us and we'll check route space.</p></div></div>
+          </div>
+          <div class="acc">
+            <button type="button" class="acc__head" aria-expanded="false" id="acc4" aria-controls="accp4">Who do I call on a storm night?<span class="acc__icon" aria-hidden="true"></span></button>
+            <div class="acc__panel" id="accp4" role="region" aria-labelledby="acc4"><div><p>Call 1-800-555-0199. It rings straight through to the dispatch desk that is tracking the storm and routing the trucks.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER (light) ================= -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__col footer__brand">
+        <a href="index.html" class="logo" aria-label="FrostGuard home">
+          <img src="images/logo-ltr.svg" alt="" class="logo__img logo__img--ltr" width="46" height="46">
+          <img src="images/logo-rtl.svg" alt="" class="logo__img logo__img--rtl" width="46" height="46">
+          <span class="logo__text"><span class="logo__name">Frost<b>Guard</b></span><span class="logo__tag">Snow &amp; Ice Management</span></span>
+        </a>
+        <p>Dependable seasonal snow and ice management for homes and businesses since 2014. We clear it before you wake.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a>
+          <a href="#" aria-label="X"><svg><use href="#i-x"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg><use href="#i-yt"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="about.html#crew">Our Crews</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer__col"><h4>Services</h4><ul><li><a href="services.html#residential">Residential Plowing</a></li><li><a href="services.html#commercial">Commercial Plowing</a></li><li><a href="services.html#sidewalk">Sidewalk Clearing</a></li><li><a href="services.html#ice">Ice Treatment</a></li></ul></div>
+      <div class="footer__col"><h4>Client Portal</h4><ul><li><a href="login.html">Login</a></li><li><a href="dashboard.html">Dashboard</a></li><li><a href="pricing.html">Pricing Plans</a></li><li><a href="dashboard.html#renewal">Renew Contract</a></li></ul></div>
+      <div class="footer__col"><h4>Service Areas</h4><ul><li><a href="contact.html">Maple Ridge</a></li><li><a href="contact.html">Northgate</a></li><li><a href="contact.html">Cedar Falls</a></li><li><a href="contact.html">Lakeshore</a></li></ul></div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul class="footer__contact">
+          <li><svg><use href="#i-phone"/></svg><a href="tel:+18005550199">1-800-555-0199</a></li>
+          <li><svg><use href="#i-mail"/></svg><a href="mailto:hello@frostguard.co">hello@frostguard.co</a></li>
+          <li><svg><use href="#i-pin"/></svg><span>48 Depot Lane, Northgate</span></li>
+          <li><svg><use href="#i-clock"/></svg><span>24/7 · Nov 1 – Apr 15</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>© <span id="year">2026</span> FrostGuard Snow &amp; Ice Management. All rights reserved.</p>
+        <ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li><li><a href="#">Service Agreement</a></li></ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="48" height="48">
+<!-- FrostGuard "Home & Shovel" logo (RTL) -->
+<defs><clipPath id="fgHomeR"><circle cx="50" cy="50" r="44"/></clipPath></defs>
+<g transform="translate(100 0) scale(-1 1)"><circle cx="50" cy="50" r="44" fill="#90CDF4"/><g clip-path="url(#fgHomeR)"><path d="M0 72 C30 66 70 66 100 72V100H0Z" fill="#FFFFFF"/></g>
+<path d="M76 18V30 M70.8 21.0L81.2 27.0 M70.8 27.0L81.2 21.0" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M24 25V35 M19.7 27.5L28.3 32.5 M19.7 32.5L28.3 27.5" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+<g stroke="#1A365D" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><rect x="29" y="47" width="34" height="27" fill="#FFFFFF"/><path d="M22 50L46 28L70 50Z" fill="#2B6CB0"/>
+<rect x="41" y="58" width="10" height="16" fill="#2B6CB0"/><rect x="32" y="53" width="7" height="7" fill="#90CDF4"/><rect x="53" y="53" width="7" height="7" fill="#90CDF4"/></g>
+<path d="M25 46L46 27L67 46" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<g stroke="#1A365D" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M81 38L72 68" fill="none" stroke-width="3.4"/><path d="M78 35H85" fill="none" stroke-width="3.4"/>
+<path d="M66 66L78 70L75 82L63 78Z" fill="#CBD5E0"/></g><circle cx="50" cy="50" r="44" fill="none" stroke="#1A365D" stroke-width="3"/></g>
+</svg>
