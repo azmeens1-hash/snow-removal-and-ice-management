@@ -25,7 +25,7 @@
   });
   dirBtn.addEventListener('click', function () { var next = isRTL() ? 'ltr' : 'rtl'; root.setAttribute('dir', next); store('fg-dir', next); syncDir(); });
 
-  /* ---------- Snowfall on the brand panel ---------- */
+  /* ---------- Snowfall on the full-screen background ---------- */
   (function () {
     var canvas = $('#snowCanvas'); if (!canvas) return;
     var ctx = canvas.getContext('2d'), flakes = [], w, h, raf, running = false;
@@ -47,8 +47,33 @@
     function loop(t) { draw(t); raf = requestAnimationFrame(loop); }
     size();
     window.addEventListener('resize', function () { clearTimeout(size.t); size.t = setTimeout(size, 200); });
+    if ('ResizeObserver' in window) new ResizeObserver(function () { clearTimeout(size.t); size.t = setTimeout(size, 200); }).observe(canvas.parentElement);
     if (!reduceMotion) { running = true; raf = requestAnimationFrame(loop); }
     document.addEventListener('visibilitychange', function () { if (document.hidden) { running = false; cancelAnimationFrame(raf); } else if (!reduceMotion) { running = true; raf = requestAnimationFrame(loop); } });
+  })();
+
+  /* ---------- Fit the card to the screen (the page never scrolls) ----------
+     CSS already tightens spacing on short screens; if the card is still taller
+     than the space available (small laptop windows, phones in landscape, error
+     messages showing), it is scaled down just enough to fit. */
+  (function () {
+    var auth = $('.auth'), card = $('.auth__card');
+    if (!auth || !card) return;
+    function fit() {
+      var cs = getComputedStyle(auth);
+      var availH = auth.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+      var h = card.offsetHeight;                     // layout height, not affected by scale
+      var s = h > availH ? Math.max(availH / h, 0.5) : 1;
+      card.style.scale = s < 1 ? s.toFixed(4) : '';
+    }
+    var t;
+    function queue() { cancelAnimationFrame(t); t = requestAnimationFrame(fit); }
+    fit();
+    window.addEventListener('resize', queue);
+    window.addEventListener('orientationchange', queue);
+    if (window.visualViewport) window.visualViewport.addEventListener('resize', queue);
+    if ('ResizeObserver' in window) new ResizeObserver(queue).observe(card);   // error messages, theme/dir changes
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(queue);
   })();
 
   /* ---------- Show / hide password ---------- */
