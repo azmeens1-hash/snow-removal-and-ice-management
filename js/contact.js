@@ -244,7 +244,9 @@
       requestAnimationFrame(draw);
     }
     resize();
-    window.addEventListener('resize', resize);
+    /* follow the banner's real size: on phones it grows after first paint (web fonts load late) */
+    if ('ResizeObserver' in window) new ResizeObserver(function () { if (canvas.clientWidth !== w || canvas.clientHeight !== h) resize(); }).observe(canvas);
+    else window.addEventListener('resize', resize);
     // pause when the banner is off-screen
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
