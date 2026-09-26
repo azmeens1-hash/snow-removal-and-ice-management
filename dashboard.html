@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Dashboard | FrostGuard Snow &amp; Ice</title>
+  <meta name="description" content="FrostGuard client dashboard — enroll properties in seasonal plans, track visits by storm, view salt and ice logs, renew contracts and review invoices.">
+  <link rel="icon" type="image/svg+xml" href="images/logo-ltr.svg">
+
+  <!-- Apply saved theme + direction before first paint (prevents flash) -->
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('fg-theme');
+        var d = localStorage.getItem('fg-dir');
+        if (t) document.documentElement.setAttribute('data-theme', t);
+        if (d) document.documentElement.setAttribute('dir', d);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5M5.5 9.5V20h13V9.5M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M4.2 6.5l15.6 9M4.2 15.5l15.6-9M9.5 3.8 12 6l2.5-2.2M9.5 20.2 12 18l2.5 2.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11ZM9.5 14.5a2.5 2.5 0 0 0 2.5 2.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7l-4-4Zm0 0v4h4M9 12h6M9 16h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3ZM9 8h6M9 12h6M9 16h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 16V7h10v9M13 10h4l3 3v3h-7M2 19l5-3M6.5 19a1.8 1.8 0 1 0 0-.01M16.5 19a1.8 1.8 0 1 0 0-.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4l2-2ZM10 20a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.3-4.9L4 8M4 4v4h4M4 13a8 8 0 0 0 14.3 4.9L20 16M20 20v-4h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M7 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Zm-3 9 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v5H5a1 1 0 0 1-1-1v-4Zm16 0h-3v5h2a1 1 0 0 0 1-1v-4ZM17 19c0 1.5-2 2-5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 8l-4 4 4 4M6 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4V8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-temp" viewBox="0 0 24 24"><path d="M10 4a2 2 0 0 1 4 0v10a4 4 0 1 1-4 0V4Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 9v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="side" id="side" aria-label="Dashboard navigation">
+    <div class="side__head">
+      <a href="index.html" class="logo" aria-label="FrostGuard Snow and Ice — home">
+        <img src="images/logo-ltr.svg" alt="" class="logo__img logo__img--ltr" width="44" height="44">
+        <img src="images/logo-rtl.svg" alt="" class="logo__img logo__img--rtl" width="44" height="44">
+        <span class="logo__text">
+          <span class="logo__name">Frost<b>Guard</b></span>
+          <span class="logo__tag">Snow &amp; Ice Management</span>
+        </span>
+      </a>
+      <button class="icon-btn side__close" id="sideClose" aria-label="Close menu"><svg><use href="#i-close"/></svg></button>
+    </div>
+
+    <p class="side__label">Client portal</p>
+    <nav class="side__nav">
+      <a href="#overview"  class="side__link" data-view="overview"><svg><use href="#i-grid"/></svg><span>Overview</span></a>
+      <a href="#properties" class="side__link" data-view="properties"><svg><use href="#i-home"/></svg><span>Properties &amp; Enrollment</span></a>
+      <a href="#visits"    class="side__link" data-view="visits"><svg><use href="#i-snow"/></svg><span>Visit History</span><em class="side__count" id="countVisits">0</em></a>
+      <a href="#salt"      class="side__link" data-view="salt"><svg><use href="#i-drop"/></svg><span>Salt &amp; Ice Logs</span></a>
+      <a href="#contracts" class="side__link" data-view="contracts"><svg><use href="#i-file"/></svg><span>Contracts &amp; Renewal</span><em class="side__count side__count--warn" id="countRenew">1</em></a>
+      <a href="#invoices"  class="side__link" data-view="invoices"><svg><use href="#i-receipt"/></svg><span>Invoices</span><em class="side__count" id="countDue">0</em></a>
+    </nav>
+
+    <div class="side__foot">
+      <a href="index.html" class="side__link side__link--muted"><svg class="flip"><use href="#i-back"/></svg><span>Back to website</span></a>
+      <a href="login.html" class="side__link side__link--muted"><svg class="flip"><use href="#i-logout"/></svg><span>Log out</span></a>
+    </div>
+  </aside>
+  <div class="side-overlay" id="sideOverlay"></div>
+
+  <!-- ================= APP ================= -->
+  <div class="app">
+    <header class="top" id="top">
+      <button class="icon-btn top__burger" id="burger" aria-label="Open menu" aria-controls="side" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
+      <div class="top__title">
+        <h1 id="pageTitle">Overview</h1>
+        <p id="pageSub">Welcome back, Jane. Here's your winter at a glance.</p>
+      </div>
+      <label class="top__search">
+        <svg><use href="#i-search"/></svg>
+        <input type="search" id="globalSearch" placeholder="Search visits, invoices…" aria-label="Search visits and invoices">
+      </label>
+      <div class="top__actions">
+        <button class="icon-btn dir-toggle" id="dirToggle" aria-label="Switch to right-to-left layout"><span class="dir-toggle__label">RTL</span></button>
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Switch to dark theme">
+          <svg class="theme-toggle__moon"><use href="#i-moon"/></svg>
+          <svg class="theme-toggle__sun"><use href="#i-sun"/></svg>
+        </button>
+        <div class="notif">
+          <button class="icon-btn notif__btn" id="notifBtn" aria-label="Notifications" aria-expanded="false" aria-controls="notifPanel"><svg><use href="#i-bell"/></svg><i class="notif__dot" aria-hidden="true"></i></button>
+          <div class="notif__panel" id="notifPanel" role="dialog" aria-label="Notifications">
+            <div class="notif__head"><strong>Notifications</strong><button class="link-btn" id="notifClear">Mark all read</button></div>
+            <ul class="notif__list" id="notifList"></ul>
+          </div>
+        </div>
+        <button class="user" id="userBtn" aria-label="Account: Jane Cooper">
+          <span class="avatar">JC</span>
+          <span class="user__text"><strong>Jane Cooper</strong><small>Cooper Properties LLC</small></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" class="main">
+
+      <!-- ============ OVERVIEW ============ -->
+      <section class="view" id="view-overview" data-view="overview">
+        <div class="alert" role="status">
+          <span class="alert__icon"><svg><use href="#i-snow"/></svg><i class="pulse" aria-hidden="true"></i></span>
+          <div class="alert__text">
+            <strong>2026–27 season: renew by October 31</strong>
+            <span>Lock in this season's pricing and your crew's route slot before enrollment closes.</span>
+          </div>
+          <a href="#contracts" class="btn btn--primary btn--sm alert__btn">Renew now <svg class="flip"><use href="#i-arrow"/></svg></a>
+        </div>
+
+        <div class="kpis" id="kpis"></div>
+
+        <div class="grid-2">
+          <article class="card">
+            <header class="card__head">
+              <div><h2>Visits by storm</h2><p>Last season · every push and treatment</p></div>
+              <a href="#visits" class="link-arrow">All visits <svg class="flip"><use href="#i-arrow"/></svg></a>
+            </header>
+            <div class="chart" id="stormChart" role="img" aria-label="Bar chart of visits per storm event last season"></div>
+          </article>
+
+          <article class="card">
+            <header class="card__head"><div><h2>Season renewal</h2><p>2026–27 contracts</p></div></header>
+            <div class="renew-ring">
+              <div class="ring" id="renewRing" style="--p:0"><span><strong id="renewDays">0</strong><small>days left</small></span></div>
+              <ul class="renew-ring__list" id="renewList"></ul>
+            </div>
+            <a href="#contracts" class="btn btn--outline btn--block">Manage contracts</a>
+          </article>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <header class="card__head">
+              <div><h2>Recent visits</h2><p>Latest crew activity at your properties</p></div>
+              <a href="#visits" class="link-arrow">View history <svg class="flip"><use href="#i-arrow"/></svg></a>
+            </header>
+            <ul class="feed" id="recentFeed"></ul>
+          </article>
+
+          <article class="card">
+            <header class="card__head">
+              <div><h2>Invoices due</h2><p>Balance and upcoming payments</p></div>
+              <a href="#invoices" class="link-arrow">All invoices <svg class="flip"><use href="#i-arrow"/></svg></a>
+            </header>
+            <div class="due" id="dueBox"></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ PROPERTIES & ENROLLMENT ============ -->
+      <section class="view" id="view-properties" data-view="properties" hidden>
+        <div class="props" id="propList"></div>
+
+        <article class="card enroll" id="enroll">
+          <header class="card__head">
+            <div><h2>Enroll a property</h2><p>Add a property to a 2026–27 seasonal plan. You'll see your price update as you go.</p></div>
+          </header>
+
+          <form class="enroll__form" id="enrollForm" novalidate>
+            <div class="enroll__fields">
+              <div class="form-row">
+                <label class="field"><span>Property name</span><input type="text" name="name" placeholder="e.g. Lakeshore Office Park" required></label>
+                <label class="field"><span>Property type</span>
+                  <select name="type" required>
+                    <option value="res">Residential driveway</option>
+                    <option value="com">Commercial lot</option>
+                    <option value="hoa">HOA / condo community</option>
+                    <option value="walk">Sidewalks &amp; entries only</option>
+                  </select>
+                </label>
+              </div>
+              <label class="field"><span>Service address</span><input type="text" name="addr" placeholder="Street, town" required></label>
+              <div class="form-row">
+                <label class="field"><span>Approx. area (sq ft)</span><input type="number" name="area" min="500" step="100" value="2500" required></label>
+                <label class="field"><span>Service start</span><input type="date" name="start" value="2026-11-01" required></label>
+              </div>
+
+              <fieldset class="plans">
+                <legend>Choose a seasonal plan</legend>
+                <label class="plan"><input type="radio" name="plan" value="standard" checked>
+                  <span class="plan__box"><strong>Standard</strong><small>2″ trigger · 4 hr arrival</small><b data-plan-price="standard"></b></span></label>
+                <label class="plan"><input type="radio" name="plan" value="premium">
+                  <span class="plan__box"><em class="plan__tag">Popular</em><strong>Premium</strong><small>1″ trigger · 2 hr arrival</small><b data-plan-price="premium"></b></span></label>
+                <label class="plan"><input type="radio" name="plan" value="sidewalk">
+                  <span class="plan__box"><strong>Sidewalk Plus</strong><small>0.5″ trigger · hand crews</small><b data-plan-price="sidewalk"></b></span></label>
+              </fieldset>
+
+              <fieldset class="addons">
+                <legend>Add-ons</legend>
+                <label class="check"><input type="checkbox" name="addon" value="brine"><span></span>Brine pre-treatment</label>
+                <label class="check"><input type="checkbox" name="addon" value="petsafe"><span></span>Pet-safe de-icer</label>
+                <label class="check"><input type="checkbox" name="addon" value="haul"><span></span>Snow haul-off</label>
+                <label class="check"><input type="checkbox" name="addon" value="priority"><span></span>Priority route</label>
+              </fieldset>
+            </div>
+
+            <aside class="quote">
+              <h3>Your seasonal estimate</h3>
+              <ul class="quote__lines" id="quoteLines"></ul>
+              <div class="quote__total"><span>Total per season</span><strong id="quoteTotal">$0</strong></div>
+              <p class="quote__note">Fixed price. No storm surcharges. Billed in 3 instalments.</p>
+              <button type="submit" class="btn btn--primary btn--block">Enroll property <svg class="flip"><use href="#i-arrow"/></svg></button>
+              <p class="form-msg" id="enrollMsg" role="status" aria-live="polite"></p>
+            </aside>
+          </form>
+        </article>
+      </section>
+
+      <!-- ============ VISIT HISTORY ============ -->
+      <section class="view" id="view-visits" data-view="visits" hidden>
+        <div class="toolbar">
+          <label class="field field--inline"><span>Storm event</span>
+            <select id="stormFilter"><option value="all">All storms</option></select>
+          </label>
+          <label class="field field--inline"><span>Property</span>
+            <select id="propFilterV"><option value="all">All properties</option></select>
+          </label>
+          <p class="toolbar__meta" id="visitMeta"></p>
+        </div>
+        <div class="storms" id="stormList"></div>
+      </section>
+
+      <!-- ============ SALT & ICE LOGS ============ -->
+      <section class="view" id="view-salt" data-view="salt" hidden>
+        <div class="grid-2 grid-2--rev">
+          <article class="card">
+            <header class="card__head"><div><h2>Material used</h2><p>Last season, all properties</p></div></header>
+            <div class="hbars" id="materialBars"></div>
+          </article>
+          <article class="card card--stats" id="saltStats"></article>
+        </div>
+
+        <article class="card">
+          <header class="card__head card__head--wrap">
+            <div><h2>Treatment log</h2><p>Every application with time, amount and conditions</p></div>
+            <div class="card__tools">
+              <label class="field field--inline field--sm"><span class="sr-only">Property</span>
+                <select id="propFilterS"><option value="all">All properties</option></select>
+              </label>
+              <button class="btn btn--outline btn--sm" id="exportCsv"><svg><use href="#i-download"/></svg>Export CSV</button>
+            </div>
+          </header>
+          <div class="table-wrap">
+            <table class="table" id="saltTable">
+              <thead><tr><th>Date &amp; time</th><th>Property</th><th>Material</th><th>Amount</th><th>Area</th><th>Temp</th><th>Applied by</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ CONTRACTS & RENEWAL ============ -->
+      <section class="view" id="view-contracts" data-view="contracts" hidden>
+        <div class="contracts" id="contractList"></div>
+      </section>
+
+      <!-- ============ INVOICES ============ -->
+      <section class="view" id="view-invoices" data-view="invoices" hidden>
+        <div class="inv-summary" id="invSummary"></div>
+        <article class="card">
+          <header class="card__head card__head--wrap">
+            <div><h2>Invoices</h2><p>Download, view or pay your invoices online</p></div>
+            <div class="tabs" role="tablist" aria-label="Filter invoices" id="invTabs">
+              <button role="tab" class="tab is-active" data-filter="all" aria-selected="true">All</button>
+              <button role="tab" class="tab" data-filter="due" aria-selected="false">Due</button>
+              <button role="tab" class="tab" data-filter="paid" aria-selected="false">Paid</button>
+            </div>
+          </header>
+          <div class="table-wrap">
+            <table class="table" id="invTable">
+              <thead><tr><th>Invoice</th><th>Issued</th><th>Description</th><th>Property</th><th>Amount</th><th>Status</th><th><span class="sr-only">Actions</span></th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="app-foot">
+      <p>© <span id="year">2026</span> FrostGuard Snow &amp; Ice Management</p>
+      <ul><li><a href="index.html">Website</a></li><li><a href="contact.html">Support</a></li><li><a href="#">Privacy</a></li></ul>
+    </footer>
+  </div>
+
+  <!-- ================= MODAL + TOAST ================= -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="icon-btn modal__close" data-close aria-label="Close"><svg><use href="#i-close"/></svg></button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"><svg><use href="#i-check"/></svg><span id="toastText"></span></div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

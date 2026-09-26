@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Login | FrostGuard Snow &amp; Ice</title>
+  <meta name="description" content="Log in to your FrostGuard client portal to manage seasonal contracts, visits, salt logs and invoices.">
+  <link rel="icon" type="image/svg+xml" href="images/logo-ltr.svg">
+
+  <!-- Apply saved theme + direction before first paint (prevents flash) -->
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('fg-theme');
+        var d = localStorage.getItem('fg-dir');
+        if (t) document.documentElement.setAttribute('data-theme', t);
+        if (d) document.documentElement.setAttribute('dir', d);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+  <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m3.5 6 8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5v2.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18M10.6 5.1A10 10 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.2 4.1M6.6 6.6A17 17 0 0 0 2 12s3.6 7 10 7a9.6 9.6 0 0 0 5.4-1.6M9.9 9.9a3 3 0 0 0 4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M4.2 6.5l15.6 9M4.2 15.5l15.6-9M9.5 3.8 12 6l2.5-2.2M9.5 20.2 12 18l2.5 2.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11ZM9.5 14.5a2.5 2.5 0 0 0 2.5 2.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7l-4-4Zm0 0v4h4M9 12h6M9 16h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Zm-3 9 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#loginForm">Skip to login form</a>
+
+  <div class="auth">
+    <!-- ============ Brand / visual panel ============ -->
+    <aside class="auth__visual" aria-hidden="true">
+      <canvas class="auth__snow" id="snowCanvas"></canvas>
+      <span class="auth__blob auth__blob--a"></span>
+      <span class="auth__blob auth__blob--b"></span>
+
+      <a href="index.html" class="logo logo--light" tabindex="-1">
+        <img src="images/logo-ltr.svg" alt="" class="logo__img logo__img--ltr" width="46" height="46">
+        <img src="images/logo-rtl.svg" alt="" class="logo__img logo__img--rtl" width="46" height="46">
+        <span class="logo__text"><span class="logo__name">Frost<b>Guard</b></span><span class="logo__tag">Snow &amp; Ice Management</span></span>
+      </a>
+
+      <div class="auth__copy">
+        <span class="pill"><svg><use href="#i-snow"/></svg>Client portal</span>
+        <h2>Your whole winter, <em>in one place.</em></h2>
+        <p>Track every visit by storm, check salt logs, renew your seasonal contract and pay invoices, all from one dashboard.</p>
+        <ul class="auth__feats">
+          <li><span><svg><use href="#i-cal"/></svg></span>Visit history, grouped by storm</li>
+          <li><span><svg><use href="#i-drop"/></svg></span>Salt &amp; ice treatment logs</li>
+          <li><span><svg><use href="#i-file"/></svg></span>Contracts, renewals &amp; invoices</li>
+        </ul>
+      </div>
+
+      <div class="auth__card">
+        <span class="auth__card-icon"><svg><use href="#i-check"/></svg></span>
+        <span><strong>Northgate Plaza cleared</strong><small>Feb 14 · 5:42 AM · photos in your portal</small></span>
+      </div>
+    </aside>
+
+    <!-- ============ Form panel ============ -->
+    <main class="auth__main">
+      <div class="auth__top">
+        <a href="index.html" class="back-link"><svg class="flip"><use href="#i-back"/></svg>Back to website</a>
+        <div class="auth__toggles">
+          <button class="icon-btn dir-toggle" id="dirToggle" aria-label="Switch to right-to-left layout"><span class="dir-toggle__label">RTL</span></button>
+          <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Switch to dark theme">
+            <svg class="theme-toggle__moon"><use href="#i-moon"/></svg>
+            <svg class="theme-toggle__sun"><use href="#i-sun"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="auth__box">
+        <a href="index.html" class="logo auth__logo" aria-label="FrostGuard Snow and Ice — home">
+          <img src="images/logo-ltr.svg" alt="" class="logo__img logo__img--ltr" width="46" height="46">
+          <img src="images/logo-rtl.svg" alt="" class="logo__img logo__img--rtl" width="46" height="46">
+          <span class="logo__text"><span class="logo__name">Frost<b>Guard</b></span><span class="logo__tag">Snow &amp; Ice Management</span></span>
+        </a>
+
+        <h1>Welcome back</h1>
+        <p class="auth__lead">Log in to manage your properties, visits and invoices.</p>
+
+        <form class="form" id="loginForm" novalidate>
+          <label class="field">
+            <span class="field__label">Email address</span>
+            <span class="field__control">
+              <svg class="field__icon"><use href="#i-mail"/></svg>
+              <input type="email" name="email" id="email" placeholder="you@company.com" autocomplete="email" required>
+            </span>
+            <small class="field__error" id="emailError"></small>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Password</span>
+            <span class="field__control">
+              <svg class="field__icon"><use href="#i-lock"/></svg>
+              <input type="password" name="password" id="password" placeholder="Enter your password" autocomplete="current-password" required minlength="6">
+              <button type="button" class="field__eye" id="togglePw" aria-label="Show password" aria-pressed="false">
+                <svg class="eye-off"><use href="#i-eye-off"/></svg><svg class="eye-on"><use href="#i-eye"/></svg>
+              </button>
+            </span>
+            <small class="field__error" id="pwError"></small>
+          </label>
+
+          <div class="form__row">
+            <label class="check"><input type="checkbox" name="remember" id="remember"><span></span>Remember me</label>
+            <a href="#" class="link" id="forgotLink">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--block" id="loginBtn"><span class="btn__text">Log in</span><svg class="flip"><use href="#i-arrow"/></svg><i class="spinner" aria-hidden="true"></i></button>
+
+          <div class="divider"><span>or continue with</span></div>
+
+          <!-- Social sign-in: Google & Apple icons load from the Simple Icons CDN (see login.css).
+               A letter badge shows if you're offline. -->
+          <div class="social">
+            <button type="button" class="social__btn" data-provider="Google">
+              <span class="social__icon"><i></i><b>G</b></span>
+              <span><span class="social__label-long">Continue with </span>Google</span>
+            </button>
+            <button type="button" class="social__btn social__btn--apple" data-provider="Apple">
+              <span class="social__icon"><i></i><b>A</b></span>
+              <span><span class="social__label-long">Continue with </span>Apple</span>
+            </button>
+          </div>
+
+          <p class="form__msg" id="formMsg" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="auth__alt">New to FrostGuard? <a href="signup.html" class="link">Create account</a></p>
+        <p class="auth__secure"><svg><use href="#i-shield"/></svg>Secured with 256-bit encryption</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
