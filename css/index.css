@@ -327,7 +327,7 @@ h1, h2, h3, h4 { font-family: var(--ff-head); color: var(--heading); line-height
 .checklist li { display: flex; align-items: center; gap: 10px; font-weight: 500; color: var(--heading); }
 .checklist svg { width: 24px; height: 24px; padding: 5px; border-radius: 50%; background: var(--c-sky); color: var(--c-navy); flex-shrink: 0; transition: transform .4s var(--ease), background-color .3s, color .3s; }
 .checklist li:hover svg { transform: scale(1.15) rotate(-10deg); background: var(--c-blue); color: #fff; }
-.about__foot { display: flex; justify-content: center; }
+.about__foot { display: flex; justify-content: flex-start; }   /* desktop: lines up with the left-aligned About copy */
 
 /* ---------- 10. Services ---------- */
 .services { background: var(--bg-alt); }
@@ -551,7 +551,7 @@ h1, h2, h3, h4 { font-family: var(--ff-head); color: var(--heading); line-height
   .dir-toggle { padding-inline: 11px; }
   .header__login { padding: 10px 16px; }
   .about__inner, .why__inner { gap: 48px; }
-  .about__badge { inset-inline-start: -10px; }
+  .about__badge { inset-inline-start: 0; }
   .services__grid { gap: 18px; }
   .svc__media { height: 170px; }
   .svc__body { padding: 22px 18px 24px; }
@@ -644,12 +644,14 @@ h1, h2, h3, h4 { font-family: var(--ff-head); color: var(--heading); line-height
   .promise__card p { font-size: 14px; }
   .about__badge { inset-inline-start: 14px; }
   .services__grid { grid-template-columns: repeat(2, 1fr); }
-  .why__img { min-height: 400px; }
+  .why__media { max-width: 520px; }
+  .why__img { min-height: 380px; }
   /* about + why: centred like the other section heads */
   .about__copy, .why__copy > header { text-align: center; }
   [dir="rtl"] .about__copy :is(h2, p), [dir="rtl"] .why__copy > header h2 { text-align: center; }
   .about__copy .section__lead { max-width: 620px; margin-inline: auto; }
   .checklist { width: fit-content; margin-inline: auto; }
+  .about__foot { justify-content: center; }
   .about__media { padding-inline-end: 60px; }
   .cta__inner { flex-direction: column; text-align: center; padding: 44px 32px; }
   [dir="rtl"] .cta :is(h2, p) { text-align: center; }
@@ -727,6 +729,12 @@ h1, h2, h3, h4 { font-family: var(--ff-head); color: var(--heading); line-height
   .hero__cta .btn { width: 100%; }
   .promise { margin-top: -80px; }
   .promise__grid { grid-template-columns: 1fr; gap: 14px; }
+  /* promise cards: centred like every other block on phones */
+  .promise__card { flex-direction: column; align-items: center; text-align: center; gap: 12px; padding: 24px 20px; }
+  [dir="rtl"] .promise__card :is(h3, p) { text-align: center; }
+  /* service cards: centred text + link */
+  .svc__body { align-items: center; text-align: center; padding: 22px 20px 24px; }
+  [dir="rtl"] .svc__body :is(h3, p) { text-align: center; }
   .section__head { margin-bottom: 40px; }
   .section__head--row { flex-direction: column; align-items: flex-start; }
   .about__media { padding-bottom: 50px; padding-inline-end: 30px; }
@@ -761,7 +769,9 @@ h1, h2, h3, h4 { font-family: var(--ff-head); color: var(--heading); line-height
   .about__copy, .why__copy > header { text-align: center; }
   [dir="rtl"] .about__copy :is(h2, p), [dir="rtl"] .why__copy > header h2 { text-align: center; }
   .checklist { width: fit-content; margin-inline: auto; }
-  .why__img { min-height: 300px; }
+  .about__foot { justify-content: center; }
+  .why__media { max-width: 420px; }
+  .why__img { min-height: 280px; }
 
   [dir="rtl"] { --rx: -24px; }
   :root:not([dir="rtl"]) { --rx: 24px; }

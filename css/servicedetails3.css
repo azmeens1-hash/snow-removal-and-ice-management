@@ -222,7 +222,7 @@ h1, h2, h3, h4 { font-family: var(--ff-head); color: var(--heading); line-height
 @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.1) translate(-1.5%, -1%); } }
 .page-hero { position: relative; overflow: hidden; isolation: isolate; padding: 110px 0 160px; text-align: center; color: rgba(235, 248, 255, .9); }
 .page-hero__bg { position: absolute; inset: 0; z-index: -2; overflow: hidden; background: linear-gradient(145deg, var(--c-blue), var(--c-blue-dark)); }
-.page-hero__img { position: absolute; inset: -5%; background: url("../images/services-hero.jpg") center / cover no-repeat; animation: kenburns 28s ease-in-out infinite alternate; will-change: transform; }
+.page-hero__img { position: absolute; inset: -5%; background: url("../images/service-3.jpg") center / cover no-repeat; animation: kenburns 28s ease-in-out infinite alternate; will-change: transform; }
 .page-hero__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, var(--hero-ov-1) 0%, var(--hero-ov-2) 50%, var(--hero-ov-3) 100%); }
 .page-hero__inner { position: relative; max-width: 880px; }
 .crumbs { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px; padding: 8px 18px; border-radius: 50px; background: rgba(255, 255, 255, .08); border: 1.5px solid rgba(144, 205, 244, .7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); font-size: 14px; font-weight: 500; color: #fff; animation: heroIn 1s var(--ease) both; }
