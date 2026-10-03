@@ -241,7 +241,7 @@
     }).join('');
 
     var due = dueInvoices();
-    $('#dueBox').innerHTML = '<p class="due__amount num" data-count="' + balance().toFixed(2) + '" data-prefix="$" data-decimals="2">$0</p><p class="due__sub">' + due.length + ' open invoice' + (due.length === 1 ? '' : 's') + '</p>' +
+    $('#dueBox').innerHTML = '<strong class="due__amount num" data-count="' + balance().toFixed(2) + '" data-prefix="$" data-decimals="2">$0</strong><p class="due__sub">' + due.length + ' open invoice' + (due.length === 1 ? '' : 's') + '</p>' +
       '<ul class="due__list">' + due.slice(0, 3).map(function (i) {
         return '<li><div><strong>' + i.id + '</strong><small>' + esc(propName(i.prop)) + ' · due ' + i.due + '</small></div><b class="num">' + money(i.amount) + '</b></li>';
       }).join('') + '</ul>' +

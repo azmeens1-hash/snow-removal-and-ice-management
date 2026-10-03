@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/home2.css?v=20260926c">
+  <link rel="stylesheet" href="css/home2.css?v=20261003i">
 </head>
 <body>
 
@@ -64,7 +64,6 @@
     <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
     <symbol id="i-yt" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></symbol>
     <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5M5.5 9.5V20h13V9.5M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-clipboard" viewBox="0 0 24 24"><path d="M9 4h6v3H9zM8 5.5H6v15h12v-15h-2M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8L3 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7.5" cy="8.5" r="1.5" fill="currentColor"/></symbol>
     <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
@@ -210,40 +209,58 @@
           <p class="section__lead">We own and maintain all of our equipment, so every contract is backed by real trucks, loaders and crews. Nothing is subcontracted.</p>
         </header>
 
+        <!-- fleet photos: Pexels (free licence). To self-host, save them as
+             images/fleet-1.jpg … fleet-4.jpg and swap the URLs below. -->
         <div class="fleet__grid">
           <article class="rig reveal">
-            <svg class="rig__mark" aria-hidden="true"><use href="#i-truck"/></svg>
-            <span class="rig__icon"><svg><use href="#i-truck"/></svg></span>
-            <strong class="rig__num" data-count="38">0</strong>
-            <h3>Plow Trucks</h3>
-            <p>Heavy-duty trucks with V-blades and wing plows for lots, lanes and private roads.</p>
+            <div class="rig__media">
+              <img src="images/home2-1.jpg" alt="A heavy-duty plow truck clearing a snow-covered road" width="800" height="533" loading="lazy">
+            </div>
+            <div class="rig__body">
+              <span class="rig__badge" aria-hidden="true"><svg><use href="#i-truck"/></svg></span>
+              <strong class="rig__num" data-count="38">0</strong>
+              <h3>Plow Trucks</h3>
+              <p>Heavy-duty trucks with V-blades and wing plows for lots, lanes and private roads.</p>
+            </div>
           </article>
           <article class="rig reveal" style="--d:.1s">
-            <svg class="rig__mark" aria-hidden="true"><use href="#i-loader"/></svg>
-            <span class="rig__icon"><svg><use href="#i-loader"/></svg></span>
-            <strong class="rig__num" data-count="14">0</strong>
-            <h3>Skid Steers &amp; Loaders</h3>
-            <p>They stack and move snow away so you keep every parking space.</p>
+            <div class="rig__media">
+              <img src="images/home2-2.jpg" alt="A yellow loader pushing and stacking deep snow" width="800" height="533" loading="lazy">
+            </div>
+            <div class="rig__body">
+              <span class="rig__badge" aria-hidden="true"><svg><use href="#i-loader"/></svg></span>
+              <strong class="rig__num" data-count="14">0</strong>
+              <h3>Skid Steers &amp; Loaders</h3>
+              <p>They stack and move snow away so you keep every parking space.</p>
+            </div>
           </article>
           <article class="rig reveal" style="--d:.2s">
-            <svg class="rig__mark" aria-hidden="true"><use href="#i-tank"/></svg>
-            <span class="rig__icon"><svg><use href="#i-tank"/></svg></span>
-            <strong class="rig__num" data-count="12">0</strong>
-            <h3>Brine &amp; Salt Units</h3>
-            <p>Calibrated spreaders that pre-treat and de-ice, with every pass logged by GPS.</p>
+            <div class="rig__media">
+              <img src="images/home2-3.jpg" alt="A treatment truck spreading de-icer on an icy winter road" width="800" height="533" loading="lazy">
+            </div>
+            <div class="rig__body">
+              <span class="rig__badge" aria-hidden="true"><svg><use href="#i-tank"/></svg></span>
+              <strong class="rig__num" data-count="12">0</strong>
+              <h3>Brine &amp; Salt Units</h3>
+              <p>Calibrated spreaders that pre-treat and de-ice, with every pass logged by GPS.</p>
+            </div>
           </article>
           <article class="rig reveal" style="--d:.3s">
-            <svg class="rig__mark" aria-hidden="true"><use href="#i-shovel"/></svg>
-            <span class="rig__icon"><svg><use href="#i-shovel"/></svg></span>
-            <strong class="rig__num" data-count="45" data-suffix="+">0</strong>
-            <h3>Sidewalk Crews</h3>
-            <p>Hand crews with blowers for walks, steps, ramps and entrances.</p>
+            <div class="rig__media">
+              <img src="images/home2-4.jpg" alt="Two crew members in safety vests shoveling a snowy path" width="800" height="533" loading="lazy">
+            </div>
+            <div class="rig__body">
+              <span class="rig__badge" aria-hidden="true"><svg><use href="#i-shovel"/></svg></span>
+              <strong class="rig__num" data-count="45" data-suffix="+">0</strong>
+              <h3>Sidewalk Crews</h3>
+              <p>Hand crews with blowers for walks, steps, ramps and entrances.</p>
+            </div>
           </article>
         </div>
 
         <div class="fleet__feature">
           <div class="fleet__media reveal reveal--side-rev">
-            <div class="media fleet__img"><span class="media__img" style="background-image:url('images/home2-1.jpg')"></span></div>
+            <div class="media fleet__img"><span class="media__img" style="background-image:url('images/maintain.jpg')"></span></div>
             <span class="fleet__badge"><svg><use href="#i-shield"/></svg>Inspected every week</span>
           </div>
           <div class="fleet__copy reveal reveal--side">
@@ -278,6 +295,38 @@
           <li class="tl reveal" style="--d:.3s"><span class="tl__time">Every 2″</span><span class="tl__dot"><svg><use href="#i-snow"/></svg></span><h3>Continuous Clearing</h3><p>Crews repeat passes until the storm has passed.</p></li>
           <li class="tl reveal" style="--d:.4s"><span class="tl__time">Post-Storm</span><span class="tl__dot"><svg><use href="#i-file"/></svg></span><h3>Visit Report</h3><p>GPS times, photos and salt use are posted to your portal.</p></li>
         </ol>
+      </div>
+    </section>
+
+    <!-- ================= PRE-SEASON SITE PLAN (image + content) ================= -->
+    <!-- photo: Pexels (free licence). To self-host, save it as images/site-plan.jpg and swap the src. -->
+    <section class="section siteplan" id="site-plan">
+      <div class="container siteplan__inner">
+        <div class="siteplan__copy reveal reveal--side-rev">
+          <span class="eyebrow"><svg><use href="#i-clipboard"/></svg>Pre-season site plan</span>
+          <h2 class="section__title">Your site is mapped <span class="hl">before the first storm</span></h2>
+          <p class="section__lead">Every commercial contract starts with a walk of your property in the fall. We turn it into a written snow plan, so on storm night every crew already knows what to clear first and where the snow goes.</p>
+          <ol class="siteplan__steps">
+            <li><span>01</span><div><h3>Hazards marked</h3><p>Drains, curbs, islands and low walls are staked and photographed.</p></div></li>
+            <li><span>02</span><div><h3>Priority zones set</h3><p>Fire lanes, entrances and docks are cleared first, then the main lot.</p></div></li>
+            <li><span>03</span><div><h3>Stacking areas agreed</h3><p>Snow piles go where they won't block parking spaces or drains.</p></div></li>
+          </ol>
+          <a href="#quote" class="btn btn--primary">Book a Site Walk <svg class="flip"><use href="#i-arrow"/></svg></a>
+        </div>
+
+        <div class="siteplan__media reveal reveal--side">
+          <div class="siteplan__frame">
+            <img src="images/work-1.jpg" alt="A snowplow clearing a commercial road during a heavy snowstorm" width="1000" height="667" loading="lazy">
+          </div>
+          <div class="siteplan__card">
+            <span class="siteplan__card-icon"><svg><use href="#i-file"/></svg></span>
+            <span><strong>Written snow plan</strong><small>Ready before Oct 31</small></span>
+          </div>
+          <ul class="siteplan__stats">
+            <li><strong>380+</strong><span>Sites mapped</span></li>
+            <li><strong>48 hr</strong><span>Plan turnaround</span></li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -407,6 +456,6 @@
   </footer>
 
 
-  <script src="js/home2.js?v=20260926c"></script>
+  <script src="js/home2.js?v=20261003c"></script>
 </body>
 </html>

@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/about.css?v=20261003d">
 </head>
 <body>
 
@@ -72,6 +72,7 @@
     <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m8.5 14-1.5 7 5-2.5 5 2.5-1.5-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
     <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14a6 6 0 0 1 3.5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
   </svg>
 
@@ -151,8 +152,6 @@
       <canvas class="page-hero__snow" id="snowCanvas" aria-hidden="true"></canvas>
       <div class="container page-hero__inner">
         <nav class="crumbs" aria-label="Breadcrumb">
-          <a href="index.html"><svg><use href="#i-home"/></svg>Home</a>
-          <svg class="crumbs__sep flip"><use href="#i-chev-r"/></svg>
           <span aria-current="page">About Us</span>
         </nav>
         <h1 class="page-hero__title"><span class="line"><span>Local crews.</span></span><span class="line"><span><em>Twelve winters strong.</em></span></span></h1>
@@ -178,21 +177,95 @@
           <p class="section__lead">FrostGuard started in 2014 with one plow truck, one shovel crew and twelve driveways on Maple Ridge. Neighbours told neighbours, and the plazas and clinics followed.</p>
           <p class="story__text">Our promise hasn't changed since then. We show up before the storm, we clear it properly, and we prove every visit with photos. We still answer the phone ourselves at 3 AM.</p>
           <ul class="story__stats">
-            <li><strong data-count="1850" data-suffix="+">0</strong><span>Properties served</span></li>
-            <li><strong data-count="64">0</strong><span>Winter rigs</span></li>
-            <li><strong data-count="120" data-suffix="+">0</strong><span>Crew members</span></li>
+            <li><strong data-count="12">0</strong><span>Winters cleared</span></li>
+            <li><strong data-count="120" data-suffix="+">0</strong><span>Full-time crew</span></li>
+            <li><strong data-count="4">0</strong><span>Towns we serve</span></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- ================= 3. MISSION & VALUES ================= -->
+    <!-- ================= 3. HOW WE WORK (About-only: our process, step by step) ================= -->
+    <!-- process photos: Pexels (free licence). To self-host, save them into /images and swap the URLs. -->
+    <section class="section how" id="process">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow"><svg><use href="#i-file"/></svg>How we work</span>
+          <h2 class="section__title">How a FrostGuard winter <span class="hl">actually works</span></h2>
+          <p class="section__lead">Snow removal isn't just pushing snow. Here's what our crews do on your property, from the first autumn walk-through to the report after every storm.</p>
+        </header>
+        <div class="how__list">
+          <article class="how__row">
+            <div class="how__media reveal reveal--side-rev">
+              <img src="images/abt-1.jpg" alt="A FrostGuard plow truck prepared and ready on a winter road" width="1100" height="733" loading="lazy">
+              <span class="how__step"><small>Step</small>01</span>
+            </div>
+            <div class="how__copy reveal reveal--side">
+              <span class="how__phase"><svg><use href="#i-cal"/></svg>Before the season</span>
+              <h3>We survey and map every property</h3>
+              <p>Each autumn a site lead walks your property with you. We map where snow can be piled, mark curbs, drains, steps and anything a plow blade could catch, then plan the route your crew will drive all winter.</p>
+              <ul class="how__points"><li><svg><use href="#i-check"/></svg>Marker stakes placed along curbs, beds and hydrants</li><li><svg><use href="#i-check"/></svg>Snow-stacking zones agreed so parking stays open</li><li><svg><use href="#i-check"/></svg>Trucks, blades and spreaders serviced before November</li></ul>
+            </div>
+          </article>
+          <article class="how__row">
+            <div class="how__media reveal reveal--side">
+              <img src="images/abt-2.jpg" alt="A treatment truck spreading brine on a road ahead of a storm" width="1100" height="733" loading="lazy">
+              <span class="how__step"><small>Step</small>02</span>
+            </div>
+            <div class="how__copy reveal reveal--side-rev">
+              <span class="how__phase"><svg><use href="#i-drop"/></svg>Before the storm</span>
+              <h3>We pre-treat so ice can’t bond</h3>
+              <p>When the forecast turns, our weather desk schedules crews 24 hours ahead. Six hours before snowfall, brine trucks spray lots, drives and walks so the first layer of snow never freezes to the pavement.</p>
+              <ul class="how__points"><li><svg><use href="#i-check"/></svg>Salt brine applied 4–6 hours before snowfall</li><li><svg><use href="#i-check"/></svg>Up to 40% less salt than treating after the storm</li><li><svg><use href="#i-check"/></svg>Every pass logged by GPS for your records</li></ul>
+            </div>
+          </article>
+          <article class="how__row">
+            <div class="how__media reveal reveal--side-rev">
+              <img src="images/abt-3.jpg" alt="A plow truck clearing a snow-covered road during a storm" width="1100" height="733" loading="lazy">
+              <span class="how__step"><small>Step</small>03</span>
+            </div>
+            <div class="how__copy reveal reveal--side">
+              <span class="how__phase"><svg><use href="#i-truck"/></svg>During the storm</span>
+              <h3>Plows roll at 2 inches, automatically</h3>
+              <p>Once snow reaches your trigger depth, the plow on your route is dispatched without you calling. Crews make repeat passes every two inches until the storm ends, keeping entrances, fire lanes and drive aisles open.</p>
+              <ul class="how__points"><li><svg><use href="#i-check"/></svg>Auto-dispatch at your 2″ trigger, day or night</li><li><svg><use href="#i-check"/></svg>Repeat passes so snow never gets packed down</li><li><svg><use href="#i-check"/></svg>Loaders stack or haul snow off-site when space runs out</li></ul>
+            </div>
+          </article>
+          <article class="how__row">
+            <div class="how__media reveal reveal--side">
+              <img src="images/abt-4.jpg" alt="A crew member shoveling snow at the entrance of a brick building" width="1100" height="733" loading="lazy">
+              <span class="how__step"><small>Step</small>04</span>
+            </div>
+            <div class="how__copy reveal reveal--side-rev">
+              <span class="how__phase"><svg><use href="#i-walk"/></svg>Walks &amp; entrances</span>
+              <h3>Hand crews clear what plows can’t reach</h3>
+              <p>Sidewalks, steps, ramps and doorways are cleared by shovel and snow blower crews who travel with the plow. Accessible routes and main entrances are always done first, so people can get in and out safely.</p>
+              <ul class="how__points"><li><svg><use href="#i-check"/></svg>Accessible ramps and main doors cleared first</li><li><svg><use href="#i-check"/></svg>Steps and landings cleared edge to edge</li><li><svg><use href="#i-check"/></svg>Pet-safe ice melt available for homes and clinics</li></ul>
+            </div>
+          </article>
+          <article class="how__row">
+            <div class="how__media reveal reveal--side-rev">
+              <img src="images/abt-5.jpg" alt="A crew member spreading ice melt on a cleared driveway" width="1100" height="733" loading="lazy">
+              <span class="how__step"><small>Step</small>05</span>
+            </div>
+            <div class="how__copy reveal reveal--side">
+              <span class="how__phase"><svg><use href="#i-check"/></svg>After the storm</span>
+              <h3>We de-ice, check and report every visit</h3>
+              <p>After the final pass, crews salt the surfaces people walk and drive on, then walk the site to check for missed spots and refreeze risks. Photos, GPS times and salt amounts go into your portal before you wake up.</p>
+              <ul class="how__points"><li><svg><use href="#i-check"/></svg>Salt or pet-safe blend applied to cleared surfaces</li><li><svg><use href="#i-check"/></svg>Quality walk-through before the crew leaves</li><li><svg><use href="#i-check"/></svg>Time-stamped photos and salt log in your portal</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3b. MISSION & VISION ================= -->
     <section class="section values" id="values">
       <div class="container">
         <header class="section__head reveal">
           <span class="eyebrow"><svg><use href="#i-heart"/></svg>What drives us</span>
-          <h2 class="section__title">Built on values that <span class="hl">hold up in a blizzard</span></h2>
-          <p class="section__lead">These aren't posters on a wall. They're how we plan routes, train crews and treat every property.</p>
+          <h2 class="section__title">Why we <span class="hl">do it this way</span></h2>
+          <p class="section__lead">Every step above exists for one reason: so the people using your property never have to think about the weather.</p>
         </header>
 
         <div class="mv">
@@ -203,33 +276,6 @@
           <article class="mv__card reveal" style="--d:.1s">
             <span class="mv__icon"><svg><use href="#i-eye"/></svg></span>
             <div><h3>Our vision</h3><p>To be the most trusted winter partner in the region, known for being on time, being transparent and caring for our crews.</p></div>
-          </article>
-        </div>
-
-        <div class="values__grid">
-          <article class="value reveal">
-            <span class="value__num">01</span>
-            <span class="value__icon"><svg><use href="#i-clock"/></svg></span>
-            <h3>Always on time</h3>
-            <p>Written response times on every contract, and a free visit if we miss one.</p>
-          </article>
-          <article class="value reveal" style="--d:.1s">
-            <span class="value__num">02</span>
-            <span class="value__icon"><svg><use href="#i-shield"/></svg></span>
-            <h3>Safety first</h3>
-            <p>Trained, insured crews with strict rest rules on long storm shifts.</p>
-          </article>
-          <article class="value reveal" style="--d:.2s">
-            <span class="value__num">03</span>
-            <span class="value__icon"><svg><use href="#i-file"/></svg></span>
-            <h3>Total transparency</h3>
-            <p>GPS times, photos and salt logs for every visit, all in your portal.</p>
-          </article>
-          <article class="value reveal" style="--d:.3s">
-            <span class="value__num">04</span>
-            <span class="value__icon"><svg><use href="#i-leaf"/></svg></span>
-            <h3>Care for the planet</h3>
-            <p>Brine pre-treatment and calibrated spreaders use up to 40% less salt.</p>
           </article>
         </div>
       </div>
@@ -304,27 +350,24 @@
         </div>
       </div>
     </section>
-
-    <!-- ================= 6. TRUST + CTA ================= -->
-    <section class="section trust">
+    <!-- ================= 6. CTA ================= -->
+    <section class="section cta-band" id="cta">
       <div class="container">
-        <div class="trust__grid">
-          <div class="badge-card reveal"><span class="badge-card__icon"><svg><use href="#i-shield"/></svg></span><strong>$5M</strong><small>Liability coverage</small></div>
-          <div class="badge-card reveal" style="--d:.08s"><span class="badge-card__icon"><svg><use href="#i-award"/></svg></span><strong>SIMA</strong><small>Certified snow pros</small></div>
-          <div class="badge-card reveal" style="--d:.16s"><span class="badge-card__icon"><svg><use href="#i-star"/></svg></span><strong><b data-count="4.9" data-decimals="1">0</b>/5</strong><small>Average client rating</small></div>
-          <div class="badge-card reveal" style="--d:.24s"><span class="badge-card__icon"><svg><use href="#i-check"/></svg></span><strong><b data-count="98.7" data-decimals="1" data-suffix="%">0</b></strong><small>On-time arrivals</small></div>
-        </div>
-
         <div class="cta reveal">
           <span class="cta__flake cta__flake--a" aria-hidden="true"><svg><use href="#i-snow"/></svg></span>
           <span class="cta__flake cta__flake--b" aria-hidden="true"><svg><use href="#i-snow"/></svg></span>
           <div class="cta__copy">
             <h2>Want this crew on your property?</h2>
-            <p>2026–27 enrollment is open. Reserve your route before November 15.</p>
+            <p>2026–27 enrollment is open. Reserve your route before November 15 and we'll stake your property before the first flake.</p>
+            <ul class="cta__points">
+              <li><svg><use href="#i-check"/></svg>Free on-site estimate</li>
+              <li><svg><use href="#i-check"/></svg>Photo proof every visit</li>
+              <li><svg><use href="#i-check"/></svg>24/7 storm dispatch</li>
+            </ul>
           </div>
           <div class="cta__actions">
-            <a href="pricing.html" class="btn btn--secondary btn--lg">Choose a Plan <svg class="flip"><use href="#i-arrow"/></svg></a>
-            <a href="contact.html" class="btn btn--ghost btn--lg">Free Estimate</a>
+            <a href="contact.html" class="btn btn--secondary btn--lg">Get a Free Estimate <svg class="flip"><use href="#i-arrow"/></svg></a>
+            <a href="pricing.html" class="btn btn--ghost btn--lg">View Pricing</a>
           </div>
         </div>
       </div>
@@ -373,6 +416,6 @@
     </div>
   </footer>
 
-  <script src="js/about.js"></script>
+  <script src="js/about.js?v=20261003d"></script>
 </body>
 </html>
